@@ -1,0 +1,42 @@
+<p>
+    Not all of the elements are important. What you want to do is to remove all of the elements before given from the array.
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
+</p>
+
+<p>
+    For the illustration we have an array [3, 4, 5] and we need to remove all elements that go before 3 - which is 1 and 2.
+</p>
+
+<p>
+	We have two edge cases here: (1) if can't find a cutting element then array shoudn't be changed. (2) if array is empty than it should remains empty.
+</p>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Input: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %}.
+</p>
+
+<p>
+    <strong>Output: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %}.
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Example:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">removeAllBefore([1, 2, 3, 4, 5], 3) == [3, 4, 5]
+removeAllBefore([1, 1, 2, 2, 3, 3], 2) == [2, 2, 3, 3]
+</pre>
+{% else %}
+<pre class="brush: python">remove_all_before([1, 2, 3, 4, 5], 3) == [3, 4, 5]
+remove_all_before([1, 1, 2, 2, 3, 3], 2) == [2, 2, 3, 3]
+</pre>
+{% endif %}
+</div>

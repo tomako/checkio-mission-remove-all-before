@@ -1,5 +1,5 @@
 <p>
-    Not all of the elements are important. What you need to do here is to remove all of the elements before given from the {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %}.
+    Not all of the elements are important. What you need to do here is to remove from the {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} all of the elements before the given one.
 </p>
 
 <p style="text-align: center;">
@@ -7,16 +7,16 @@
 </p>
 
 <p>
-    For the illustration we have an {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} [3, 4, 5] and we need to remove all elements that go before 3 - which is 1 and 2.
+    For the illustration we have a {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} [3, 4, 5] and we need to remove all elements that go before 3 - which is 1 and 2.
 </p>
 
 <p>
-	We have two edge cases here: (1) if a cutting element cannot be found, then the {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} shoudn't be changed. (2) if {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} is empty, then it should remain empty.
+	We have two edge cases here: (1) if a cutting element cannot be found, then the {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} shoudn't be changed. (2) if the {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} is empty, then it should remain empty.
 </p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}List{% endif %} end border element.
+    <strong>Input: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}List{% endif %} and the border element.
 </p>
 
 <p>

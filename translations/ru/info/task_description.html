@@ -1,0 +1,45 @@
+<p>
+    Не все элементы важны. Вам нужно удалить из {% if interpreter.slug == "js-node" %}array{% else %}список{% endif %} все элементы до указаного.
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
+</p>
+
+<p>
+    На примере мы имеем {% if interpreter.slug == "js-node" %}array{% else %}список{% endif %} [3, 4, 5] где нужно было удалить все элементы до 3 - 1 и 2 соответственно.
+</p>
+
+<p>
+	Есть два ньюанса: (1) если в списке нет элемента до которого нужно удалить остальные элементы, то {% if interpreter.slug == "js-node" %}array{% else %}список{% endif %} не должен измениться. (2) если {% if interpreter.slug == "js-node" %}список{% else %}list{% endif %} пустой, то он должен остаться пустым.
+</p>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Входные данные: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Список{% endif %} и элемент до которого нужно удалить другие элементы.
+</p>
+
+<p>
+    <strong>Выходные данные: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Набор значений (кортеж, список, итератор ...){% endif %}.
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Пример:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">removeAllBefore([1, 2, 3, 4, 5], 3) == [3, 4, 5]
+removeAllBefore([1, 1, 2, 2, 3, 3], 2) == [2, 2, 3, 3]
+removeAllBefore([1, 1, 2, 4, 2, 3, 4], 2) == [2, 4, 2, 3, 4]
+removeAllBefore([1, 1, 5, 6, 7], 2) == [1, 1, 5, 6, 7]
+removeAllBefore([], 0) == []
+</pre>
+{% else %}
+<pre class="brush: python">remove_all_before([1, 2, 3, 4, 5], 3) == [3, 4, 5]
+remove_all_before([1, 1, 2, 2, 3, 3], 2) == [2, 2, 3, 3]
+</pre>
+{% endif %}
+</div>

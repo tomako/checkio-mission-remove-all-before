@@ -1,0 +1,45 @@
+<p>
+   Не всі елементи важливі. Що вам потрібно зробити тут, це видалити з {% if interpreter.slug == "js-node" %}масиву{% else %}список{% endif %} всі елементи до заданого.
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
+</p>
+
+<p>
+    Для прикладу ми маємо {% if interpreter.slug == "js-node" %}масив{% else %}список{% endif %} [3, 4, 5] і на потрібно видалити всі елементи перед 3 - тобто 1 і 2.
+</p>
+
+<p>
+	Тут в нас є два крайні випадки: (1) якщо не можемо знайти елемент який потрібно видалити , тоді {% if interpreter.slug == "js-node" %}масив{% else %}список{% endif %} не повинен змінюватись. (2) якщо {% if interpreter.slug == "js-node" %}масив{% else %}список{% endif %} порожній, тоді він повинен залишитись порожнім.
+</p>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Вхідні дані: </strong> {% if interpreter.slug == "js-node" %}Масив{% else %}Список{% endif %} і крайній елемент.
+</p>
+
+<p>
+    <strong>Вихідні дані: </strong> {% if interpreter.slug == "js-node" %}Масив{% else %}Iterable (tuple, list, iterator ...){% endif %}.
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Приклад:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">removeAllBefore([1, 2, 3, 4, 5], 3) == [3, 4, 5]
+removeAllBefore([1, 1, 2, 2, 3, 3], 2) == [2, 2, 3, 3]
+removeAllBefore([1, 1, 2, 4, 2, 3, 4], 2) == [2, 4, 2, 3, 4]
+removeAllBefore([1, 1, 5, 6, 7], 2) == [1, 1, 5, 6, 7]
+removeAllBefore([], 0) == []
+</pre>
+{% else %}
+<pre class="brush: python">remove_all_before([1, 2, 3, 4, 5], 3) == [3, 4, 5]
+remove_all_before([1, 1, 2, 2, 3, 3], 2) == [2, 2, 3, 3]
+</pre>
+{% endif %}
+</div>
